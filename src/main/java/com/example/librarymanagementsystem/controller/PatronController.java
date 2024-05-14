@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/api/patrons")
+@RequestMapping(path = "/patrons")
 @RequiredArgsConstructor
 public class PatronController {
     private final PatronService patronService;

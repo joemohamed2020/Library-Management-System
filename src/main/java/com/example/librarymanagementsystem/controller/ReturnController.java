@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/api/return")
+@RequestMapping(path = "/return")
 @RequiredArgsConstructor
 public class ReturnController {
     private final ReturnService returnService;

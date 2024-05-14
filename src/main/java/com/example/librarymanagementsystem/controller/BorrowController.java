@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(path = "/api/borrow")
+@RequestMapping(path = "/borrow")
 @RequiredArgsConstructor
 public class BorrowController {
     private final BorrowService borrowService;
