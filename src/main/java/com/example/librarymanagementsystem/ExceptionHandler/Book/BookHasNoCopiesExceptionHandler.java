@@ -15,6 +15,8 @@ public class BookHasNoCopiesExceptionHandler {
     public Map<String,String> handleBookHasNoCopiesException(BookHasNoCopiesException exception){
         Map<String,String> exceptionList = new HashMap<>();
         exceptionList.put("errorMessage",exception.getMessage());
+        exceptionList.put("error","Internal Server Error");
+        exceptionList.put("status","500");
         return exceptionList;
     }
 }

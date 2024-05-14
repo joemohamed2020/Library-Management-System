@@ -17,6 +17,8 @@ public class NoBorrowRecordFoundExceptionHandler {
     public Map<String,String> handleNoBorrowRecordFoundException(NoBorrowRecordFoundException exception){
         Map<String,String> exceptionList = new HashMap<>();
         exceptionList.put("errorMessage",exception.getMessage());
+        exceptionList.put("error","Internal Server Error");
+        exceptionList.put("status","500");
         return exceptionList;
     }
 }

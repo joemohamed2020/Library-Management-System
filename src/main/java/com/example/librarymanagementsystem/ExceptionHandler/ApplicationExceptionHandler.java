@@ -22,6 +22,8 @@ public class ApplicationExceptionHandler {
         for(ConstraintViolation<?> constraintViolation:exception.getConstraintViolations()){
             exceptionList.put(constraintViolation.getPropertyPath().toString(),constraintViolation.getMessage());
         }
+        exceptionList.put("error","Bad Request");
+        exceptionList.put("status","400");
         return exceptionList;
     }
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -29,6 +31,8 @@ public class ApplicationExceptionHandler {
     public Map<String,String> handleSQLIntegrityConstraintViolationException(SQLIntegrityConstraintViolationException exception){
         Map<String,String> exceptionList = new HashMap<>();
         exceptionList.put("errorMessage",exception.getMessage());
+        exceptionList.put("error","Internal Server Error");
+        exceptionList.put("status","500");
         return exceptionList;
     }
 
