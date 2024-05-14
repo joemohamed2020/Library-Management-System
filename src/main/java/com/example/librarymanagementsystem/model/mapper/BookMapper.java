@@ -11,5 +11,6 @@ import java.util.List;
 public interface BookMapper {
     BookEntity toBookEntity(BookReqDTO bookReqDTO);
     BookResDTO toResDTO(BookEntity book);
+    BookEntity toBookEntity(BookResDTO bookResDTO);
     List<BookResDTO> toResDTO(List<BookEntity>bookEntities);
 }

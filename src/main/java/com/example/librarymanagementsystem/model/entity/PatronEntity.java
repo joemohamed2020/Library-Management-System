@@ -22,7 +22,7 @@ public class PatronEntity {
     @Column(name = "patron_name")
     private String patronName;
     @NotBlank(message = "Patron Phone Can't Be Blank")
-    @Pattern(regexp = "\\d{11}")
+    @Pattern(regexp = "\\d{11}",message = "Enter Valid Mobile Phone")
     @Column(name = "patron_phone",unique = true)
     private String patronPhone;
     @NotBlank(message = "Patron Email Can't Be Blank")

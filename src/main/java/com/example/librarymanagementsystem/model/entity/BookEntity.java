@@ -26,10 +26,10 @@ public class BookEntity {
     @Column(name = "book_publication_year")
     @Min(1)
     @Max(2024)
-    private int bookPublicationYear;
+    private Long bookPublicationYear;
     @Column(name = "book_ISBN")
     private String bookISBN;
-    @Min(1)
+    @Min(0)
     @Column(name = "number_of_copies")
-    private int numberOfCopies;
+    private Long numberOfCopies;
 }

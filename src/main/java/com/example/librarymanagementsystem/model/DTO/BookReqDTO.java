@@ -8,7 +8,7 @@ import lombok.*;
 public class BookReqDTO {
     private String bookTitle;
     private String bookAuthor;
-    private String bookPublicationYear;
+    private Long bookPublicationYear;
     private String bookISBN;
-    private int numberOfCopies;
+    private Long numberOfCopies;
 }

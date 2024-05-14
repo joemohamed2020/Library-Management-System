@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class ReturnResDTO {
     Long patronId;
     Long bookId;
-    String borrowDate;
+    String borrowingDate;
     String returnDate;
 }

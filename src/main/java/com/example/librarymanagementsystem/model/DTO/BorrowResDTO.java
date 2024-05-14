@@ -11,4 +11,5 @@ public class BorrowResDTO {
     private Long bookId;
     private Long patronId;
     private String borrowingDate;
+    private Long numberOfCopies;
 }

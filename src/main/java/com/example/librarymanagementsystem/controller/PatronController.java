@@ -1,4 +1,5 @@
 package com.example.librarymanagementsystem.controller;
+import com.example.librarymanagementsystem.Exception.Patron.PatronNotFoundException;
 import com.example.librarymanagementsystem.model.DTO.PatronReqDTO;
 import com.example.librarymanagementsystem.model.DTO.PatronResDTO;
 import com.example.librarymanagementsystem.service.PatronService;
@@ -18,7 +19,7 @@ public class PatronController {
         return patronService.getAllPatrons();
     }
     @GetMapping(path = "/{id}")
-    public PatronResDTO getPatronById(@PathVariable(name = "id") @Valid long patronId){
+    public PatronResDTO getPatronById(@PathVariable(name = "id") @Valid long patronId) throws PatronNotFoundException {
         return patronService.getPatronById(patronId);
     }
     @PostMapping(path = "")
@@ -26,7 +27,7 @@ public class PatronController {
         return patronService.addPatron(patronReqDTO);
     }
     @PutMapping(path = "/{id}")
-    public PatronResDTO updatePatronById(@PathVariable(name = "id")long patronId,@RequestBody PatronReqDTO patronReqDTO){
+    public PatronResDTO updatePatronById(@PathVariable(name = "id")long patronId,@RequestBody PatronReqDTO patronReqDTO) throws PatronNotFoundException {
         return patronService.updatePatronById(patronId,patronReqDTO);
     }
     @DeleteMapping(path = "/{id}")

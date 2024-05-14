@@ -1,5 +1,6 @@
 package com.example.librarymanagementsystem.controller;
 
+import com.example.librarymanagementsystem.Exception.Book.BookNotFoundException;
 import com.example.librarymanagementsystem.model.DTO.BookReqDTO;
 import com.example.librarymanagementsystem.model.DTO.BookResDTO;
 import com.example.librarymanagementsystem.service.BookService;
@@ -20,7 +21,7 @@ public class BookController {
         return bookService.getAllBooks();
     }
     @GetMapping(path = "/{id}")
-    public BookResDTO getBookById(@PathVariable(name = "id") @Valid long bookId){
+    public BookResDTO getBookById(@PathVariable(name = "id") @Valid long bookId) throws BookNotFoundException {
         return bookService.getBookById(bookId);
     }
     @PostMapping(path = "")
@@ -28,7 +29,7 @@ public class BookController {
         return bookService.addBook(bookReqDTO);
     }
     @PutMapping(path = "/{id}")
-    public BookResDTO updateBookById(@PathVariable(name = "id")long bookId,@RequestBody BookReqDTO bookReqDTO){
+    public BookResDTO updateBookById(@PathVariable(name = "id")long bookId,@RequestBody BookReqDTO bookReqDTO) throws BookNotFoundException {
         return bookService.updateBookById(bookId,bookReqDTO);
     }
     @DeleteMapping(path = "/{id}")

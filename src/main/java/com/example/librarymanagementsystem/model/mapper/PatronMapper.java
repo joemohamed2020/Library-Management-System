@@ -10,5 +10,6 @@ import java.util.List;
 public interface PatronMapper {
     PatronEntity toPatronEntity(PatronReqDTO patronReqDTO);
     PatronResDTO toResDTO(PatronEntity patronEntity);
+    PatronEntity toPatronEntity(PatronResDTO patronResDTO);
     List<PatronResDTO> toResDTO(List<PatronEntity>patronEntities);
 }
